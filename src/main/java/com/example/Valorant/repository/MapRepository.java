@@ -2,10 +2,12 @@ package com.example.Valorant.repository;
 
 import com.example.Valorant.models.Map;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface MapRepository extends JpaRepository<Map, Long> {
 
-    List<Map> findByMap(String map);
+    List<Map> findByName(String name);
 }

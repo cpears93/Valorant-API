@@ -4,28 +4,29 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name = "agents")
 public class Agent {
 
-    @Column(name = "Name")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "Role")
+    @Column(name = "role")
     private String role;
 
-    @Column(name = "Special Ability Q")
+    @Column(name = "specialAbilityQ")
     private String specialAbilityQ;
 
-    @Column(name = "Special Ability E")
+    @Column(name = "specialAbilityE")
     private String specialAbilityE;
 
-    @Column(name = "Special Ability C")
+    @Column(name = "specialAbilityC")
     private String specialAbilityC;
 
-    @Column(name = "Special Ability X")
+    @Column(name = "specialAbilityX")
     private String specialAbilityX;
 
     @Id
@@ -34,7 +35,7 @@ public class Agent {
 
     @JsonIgnoreProperties(value = "agents")
     @ManyToOne
-    @JoinColumn(name="map_id" ,nullable = false)
+    @JoinColumn(name = "map_id" ,nullable = false)
     private Map map;
 
     @JsonIgnoreProperties(value = "agents")

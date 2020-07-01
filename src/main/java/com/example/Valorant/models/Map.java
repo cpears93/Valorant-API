@@ -1,6 +1,7 @@
 package com.example.Valorant.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.util.List;
@@ -9,8 +10,8 @@ import java.util.List;
 @Table(name = "maps")
 public class Map {
 
-    @Column(name = "Map Name")
-    private String mapName;
+    @Column(name = "Name")
+    private String name;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,20 +19,34 @@ public class Map {
 
     @JsonIgnoreProperties(value = "map")
     @OneToMany(mappedBy = "map", fetch = FetchType.LAZY)
-    private List<Agent> agents;
+    private List<com.example.Valorant.models.Agent> agents;
 
-    public Map(String mapName) {
-        this.mapName = mapName;
+    public Map(String name) {
+        this.name = name;
     }
 
     public Map() {
     }
 
-    public String getMapName() {
-        return mapName;
+    public String getName() {
+        return name;
     }
 
-    public void setMapName(String mapName) {
-        this.mapName = mapName;
+    public void setName(String name) {
+        this.name = name;
     }
+
+    public List<com.example.Valorant.models.Agent> getAgent(){
+        return agents;
+    }
+
+    public void setAgents(List<com.example.Valorant.models.Agent> agents) {
+        this.agents = agents;
+    }
+
+    public void addAgents(com.example.Valorant.models.Agent agent){
+        this.agents.add(agent);
+    }
+
+
 }

@@ -21,7 +21,7 @@ public class MapController {
     }
 
     @GetMapping(value = "/maps/{id}")
-    public ResponseEntity getMaps(@PathVariable Long id){
+    public ResponseEntity getMap(@PathVariable Long id){
         return new ResponseEntity<>(mapRepository.findById(id), HttpStatus.OK);
     }
 

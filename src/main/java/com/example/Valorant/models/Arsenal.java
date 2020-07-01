@@ -24,11 +24,11 @@ public class Arsenal {
     @ManyToMany
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     @JoinTable(
-            name = "agent_id",
+            name = "agent_arsenal",
             joinColumns = {@JoinColumn(name = "arsenal_id", nullable = false, updatable = false)},
-            inverseJoinColumns = {@JoinColumn(name = "arsenal_id", nullable = false, updatable = false)}
+            inverseJoinColumns = {@JoinColumn(name = "agent_id", nullable = false, updatable = false)}
     )
-    private List<Agent> agents;
+    private List <Agent> agents;
 
     public Arsenal(String name, String type) {
         this.name = name;
