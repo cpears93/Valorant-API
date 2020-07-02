@@ -26,7 +26,7 @@ public class ArsenalController {
     }
 
     @PostMapping(value = "/arsenal")
-    public ResponseEntity<Arsenal> postArsenal(@RequestBody Arsenal arsenal){
+    public ResponseEntity<Arsenal> createArsenal(@RequestBody Arsenal arsenal){
         arsenalRepository.save(arsenal);
         return new ResponseEntity<>(arsenal, HttpStatus.CREATED);
     }

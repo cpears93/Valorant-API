@@ -15,18 +15,18 @@ public class MapController {
     @Autowired
     MapRepository mapRepository;
 
-    @GetMapping(value = "/maps")
-    public ResponseEntity<List<Map>> getAllMaps(){
-        return new ResponseEntity<>(mapRepository.findAll(), HttpStatus.OK);
-    }
-
     @GetMapping(value = "/maps/{id}")
     public ResponseEntity getMap(@PathVariable Long id){
         return new ResponseEntity<>(mapRepository.findById(id), HttpStatus.OK);
     }
 
+    @GetMapping(value = "/maps")
+    public ResponseEntity<List<Map>> getAllMaps(){
+        return new ResponseEntity<>(mapRepository.findAll(), HttpStatus.OK);
+    }
+
     @PostMapping(value = "/maps")
-    public ResponseEntity<Map> postMap(@RequestBody Map map){
+    public ResponseEntity<Map> createMap(@RequestBody Map map){
         mapRepository.save(map);
         return new ResponseEntity<>(map, HttpStatus.OK);
     }
