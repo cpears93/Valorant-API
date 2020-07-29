@@ -10,10 +10,10 @@ import java.util.List;
 @Table(name = "arsenal")
 public class Arsenal {
 
-    @Column(name = "Name")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "Type")
+    @Column(name = "type")
     private String type;
 
     @Id

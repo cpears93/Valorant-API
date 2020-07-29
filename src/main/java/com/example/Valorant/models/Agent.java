@@ -33,12 +33,12 @@ public class Agent {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @JsonIgnoreProperties(value = "agents")
+    @JsonIgnoreProperties(value="agents")
     @ManyToOne
-    @JoinColumn(name = "map_id" ,nullable = false)
+    @JoinColumn(name = "map_id", nullable = false)
     private Map map;
 
-    @JsonIgnoreProperties(value = "agents")
+    @JsonIgnoreProperties(value="agents")
     @ManyToMany
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     @JoinTable(
@@ -105,5 +105,21 @@ public class Agent {
 
     public void setSpecialAbilityX(String specialAbilityX) {
         this.specialAbilityX = specialAbilityX;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public List<Arsenal> getArsenal() {
+        return arsenal;
+    }
+
+    public void setArsenal(List<Arsenal> arsenal) {
+        this.arsenal = arsenal;
     }
 }

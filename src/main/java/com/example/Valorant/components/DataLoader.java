@@ -63,6 +63,9 @@ public class DataLoader implements ApplicationRunner {
         Agent reyna = new Agent("Reyna", "Duelist", "Devour", "Dismiss", "Leer", "Empress");
         agentRepository.save(reyna);
 
+        Agent killjoy = new Agent("Killjoy", "Initiator", "Turret", "Nanoswarm", "Alarmbot", "Lockdown");
+        agentRepository.save(killjoy);
+
 
         Map bind = new Map("Bind");
         mapRepository.save(bind);

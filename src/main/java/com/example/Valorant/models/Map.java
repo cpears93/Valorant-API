@@ -4,13 +4,14 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "maps")
 public class Map {
 
-    @Column(name = "Name")
+    @Column(name = "name")
     private String name;
 
     @Id
@@ -23,6 +24,7 @@ public class Map {
 
     public Map(String name) {
         this.name = name;
+        this.agents = new ArrayList<Agent>();
     }
 
     public Map() {
@@ -36,17 +38,11 @@ public class Map {
         this.name = name;
     }
 
-    public List<com.example.Valorant.models.Agent> getAgent(){
+    public List<Agent> getAgents() {
         return agents;
     }
 
-    public void setAgents(List<com.example.Valorant.models.Agent> agents) {
+    public void setAgents(List<Agent> agents) {
         this.agents = agents;
     }
-
-    public void addAgents(com.example.Valorant.models.Agent agent){
-        this.agents.add(agent);
-    }
-
-
 }
