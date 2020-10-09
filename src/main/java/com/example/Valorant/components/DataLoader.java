@@ -66,7 +66,7 @@ public class DataLoader implements ApplicationRunner {
         Agent killjoy = new Agent("Killjoy", "Initiator", "Turret", "Nanoswarm", "Alarmbot", "Lockdown");
         agentRepository.save(killjoy);
 
-        Agent skye = new Agent("Skye", "PlaceholderA", "PlaceholderB", "PlaceholderC", "PlaceholderD", "PlaceholderE");
+        Agent skye = new Agent("Skye", "Controller", "Regrowth", "Trailblazer", "Guiding Light", "Seekers");
         agentRepository.save(skye);
 
 
