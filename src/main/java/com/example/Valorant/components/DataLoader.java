@@ -120,6 +120,9 @@ public class DataLoader implements ApplicationRunner {
         Arsenal phantom = new Arsenal("Phantom", "Rifles");
         arsenalRepository.save(phantom);
 
+        Arsenal vandal = new Arsenal("Vandal", "Rifles");
+        arsenalRepository.save(vandal);
+
         Arsenal marshal = new Arsenal("Marshal", "Snipers");
         arsenalRepository.save(marshal);
 
