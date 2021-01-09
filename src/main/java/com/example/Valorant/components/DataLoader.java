@@ -67,7 +67,10 @@ public class DataLoader implements ApplicationRunner {
         Agent skye = new Agent("Skye", "Controller", "Regrowth", "Trailblazer", "Guiding Light", "Seekers");
         agentRepository.save(skye);
 
+        Agent yoru = new Agent("Yoru", "Duelist", "Fakeout", "Gatecrash", "Blindside", "Dimensional Shift");
+        agentRepository.save(yoru);
 
+        
         Map bind = new Map("Bind");
         mapRepository.save(bind);
 
