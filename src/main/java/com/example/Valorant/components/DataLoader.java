@@ -70,6 +70,9 @@ public class DataLoader implements ApplicationRunner {
         Agent yoru = new Agent("Yoru", "Duelist", "Fakeout", "Gatecrash", "Blindside", "Dimensional Shift");
         agentRepository.save(yoru);
 
+        Agent astra = new Agent("Astra", "Controller", "Nova Pulse", "Nebula", "Gravity Well", "Astral Form/Cosmic Divide");
+        agentRepository.save(astra);
+
         
         Map bind = new Map("Bind");
         mapRepository.save(bind);
