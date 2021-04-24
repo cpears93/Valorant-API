@@ -89,6 +89,9 @@ public class DataLoader implements ApplicationRunner {
         Map icebox = new Map("Icebox");
         mapRepository.save(icebox);
 
+        Map breeze = new Map("Breeze");
+        mapRepository.save(breeze);
+
 
         Arsenal classic = new Arsenal("Classic", "Sidearms");
         arsenalRepository.save(classic);
